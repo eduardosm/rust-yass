@@ -7,4 +7,4 @@ repository = "https://github.com/eduardosm/rust-yass"
 license = "MIT/Apache-2.0"
 
 [dependencies]
-yass = { path = "../yass" }
+yass = { path = "../yass", version = "=0.1.0" }
