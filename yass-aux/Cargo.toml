@@ -1,0 +1,6 @@
+[package]
+name = "yass-aux"
+version = "0.1.0"
+authors = ["Eduardo Sánchez Muñoz <esm@eduardosm.net>"]
+
+[dependencies]

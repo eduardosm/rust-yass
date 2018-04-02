@@ -1,0 +1,7 @@
+[package]
+name = "yass-parser"
+version = "0.1.0"
+authors = ["Eduardo Sánchez Muñoz <esm@eduardosm.net>"]
+
+[dependencies]
+yass = { path = "../yass" }

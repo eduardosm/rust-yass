@@ -1,0 +1,27 @@
+\ Based on last example at https://json.org/example.html (as of 2018-03-31)
+(example-2-menu)
+header "SVG Viewer"
+items [
+  (item){id "Open"}
+  (item){id "OpenNew" label "Open New"}
+  (null)[]
+  (item){id "ZoomIn" label "Zoom In"}
+  (item){id "ZoomOut" label "Zoom Out"}
+  (item){id "OriginalView" label "Original View"}
+  (null)[]
+  (item){id "Quality"}
+  (item){id "Pause"}
+  (item){id "Mute"}
+  (null)[]
+  (item){id "Find" label "Find..."}
+  (item){id "FindAgain" label "Find Again"}
+  (item){id "Copy"}
+  (item){id "CopyAgain" label "Copy Again"}
+  (item){id "CopySVG" label "Copy SVG"}
+  (item){id "ViewSVG" label "View SVG"}
+  (item){id "ViewSource" label "View Source"}
+  (item){id "SaveAs" label "Save As"}
+  (null)[]
+  (item){id "Help"}
+  (item){id "About" label "About Adobe CVG Viewer..."}
+]

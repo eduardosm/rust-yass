@@ -1,0 +1,10 @@
+[package]
+name = "yass-serializer"
+version = "0.1.0"
+authors = ["Eduardo Sánchez Muñoz <esm@eduardosm.net>"]
+
+[dependencies]
+yass = { path = "../yass" }
+
+[dev-dependencies]
+yass-parser = { path = "../yass-parser" }

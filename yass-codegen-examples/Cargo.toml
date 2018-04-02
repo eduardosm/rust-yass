@@ -1,0 +1,15 @@
+[package]
+name = "yass-codegen-examples"
+version = "0.1.0"
+authors = ["Eduardo Sánchez Muñoz <esm@eduardosm.net>"]
+build = "build.rs"
+publish = false
+
+[build-dependencies]
+yass-codegen = { path = "../yass-codegen" }
+
+[dev-dependencies]
+yass = { path = "../yass" }
+yass-aux = { path = "../yass-aux" }
+yass-parser = { path = "../yass-parser" }
+yass-schema-error = { path = "../yass-schema-error" }

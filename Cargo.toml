@@ -1,0 +1,11 @@
+[workspace]
+members = [
+    "yass",
+    "yass-aux",
+    "yass-parser",
+    "yass-serializer",
+    "yass-codegen",
+    "yass-codegen-tests",
+    "yass-codegen-examples",
+    "yass-schema-error",
+]
