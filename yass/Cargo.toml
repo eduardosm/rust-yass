@@ -2,5 +2,8 @@
 name = "yass"
 version = "0.1.0"
 authors = ["Eduardo Sánchez Muñoz <esm@eduardosm.net>"]
+description = "A data and configuration text format implemented in Rust"
+repository = "https://github.com/eduardosm/rust-yass"
+license = "MIT/Apache-2.0"
 
 [dependencies]

@@ -2,6 +2,9 @@
 name = "yass-serializer"
 version = "0.1.0"
 authors = ["Eduardo Sánchez Muñoz <esm@eduardosm.net>"]
+description = "YASS serializer"
+repository = "https://github.com/eduardosm/rust-yass"
+license = "MIT/Apache-2.0"
 
 [dependencies]
 yass = { path = "../yass" }
