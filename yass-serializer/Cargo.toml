@@ -1,13 +1,13 @@
 [package]
 name = "yass-serializer"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Eduardo Sánchez Muñoz <esm@eduardosm.net>"]
 description = "YASS serializer"
 repository = "https://github.com/eduardosm/rust-yass"
 license = "MIT/Apache-2.0"
 
 [dependencies]
-yass = { path = "../yass", version = "=0.1.0" }
+yass = { path = "../yass", version = "=0.1.1" }
 
 [dev-dependencies]
-yass-parser = { path = "../yass-parser", version = "=0.1.0" }
+yass-parser = { path = "../yass-parser", version = "=0.1.1" }

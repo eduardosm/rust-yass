@@ -1,6 +1,6 @@
 [package]
 name = "yass-codegen"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Eduardo Sánchez Muñoz <esm@eduardosm.net>"]
 description = "Code generator for YASS schemas"
 repository = "https://github.com/eduardosm/rust-yass"
