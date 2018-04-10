@@ -82,6 +82,11 @@ const TEST_1_SCHEMA: sch::Schema<'static> = sch::Schema {
                 },
             ],
         }),
+        sch::TypeDef::TaggedUnion(sch::TaggedUnionDef {
+            yass_name: "tagged-union-without_variants",
+            code_name: "TaggedUnionWithoutVariants",
+            variants: &[],
+        }),
         sch::TypeDef::Enum(sch::EnumDef {
             yass_name: "enum-without-unknown",
             code_name: "EnumWithoutUnknown",

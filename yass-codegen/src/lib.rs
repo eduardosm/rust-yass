@@ -377,7 +377,7 @@ impl<'a> CodeGen<'a> {
         code_writer.add_line("#[allow(dead_code)]".to_string());
         code_writer.add_line("pub fn from_yass_value(value: &yass::Value, pos_map: &yass::PosMap) -> Result<Self, yass_schema_error::Error> {".to_string());
         code_writer.with_indent(|code_writer| {
-            code_writer.add_line("if let yass::Value::Tagged(ref variant, ref vvalue) = *value {".to_string());
+            code_writer.add_line("if let yass::Value::Tagged(ref variant, ref _vvalue) = *value {".to_string());
             code_writer.with_indent(|code_writer| {
                 code_writer.add_line("match variant.as_str() {".to_string());
                 code_writer.with_indent(|code_writer| {
@@ -385,7 +385,7 @@ impl<'a> CodeGen<'a> {
                         code_writer.add_line(format!("{:?} => {{", variant.yass_name));
                         code_writer.with_indent(|code_writer| {
                             let prefix = format!("Ok({}::{}(", tagged_union_def.code_name, variant.code_name);
-                            self.gen_from_yass_value(&variant.type_, prefix.as_str(), "))", "(**vvalue)", code_writer);
+                            self.gen_from_yass_value(&variant.type_, prefix.as_str(), "))", "(**_vvalue)", code_writer);
                         });
                         code_writer.add_line("}".to_string());
                     }
