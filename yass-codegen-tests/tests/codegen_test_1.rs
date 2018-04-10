@@ -379,6 +379,18 @@ fn test_enum_with_unknown_fail_invalid_type() {
     assert_eq!(gen::EnumWithUnknown::from_yass_value(&data_yass, &pos_map).unwrap_err(), expected_error);
 }
 
+#[test]
+fn test_enum_without_values_fail_with_unknown() {
+    let data_yass = yass_value!(["test"]);
+    let expected_error = SchError::InvalidValueTypeForEnum {
+        enum_name: "enum-without-values".to_string(),
+        value_pos: None,
+    };
+    let pos_map = yass::PosMap::new();
+    
+    assert_eq!(gen::EnumWithoutValues::from_yass_value(&data_yass, &pos_map).unwrap_err(), expected_error);
+}
+
 // raw atom
 #[test]
 fn test_raw_atom() {

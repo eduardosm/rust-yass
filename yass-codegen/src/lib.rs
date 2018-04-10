@@ -372,6 +372,7 @@ impl<'a> CodeGen<'a> {
             code_writer.add_line("}".to_string());
         });
         code_writer.add_line("}".to_string());
+        code_writer.add_empty_line();
         
         code_writer.add_line("#[allow(dead_code)]".to_string());
         code_writer.add_line("pub fn from_yass_value(value: &yass::Value, pos_map: &yass::PosMap) -> Result<Self, yass_schema_error::Error> {".to_string());
@@ -441,19 +442,24 @@ impl<'a> CodeGen<'a> {
         code_writer.add_line("#[allow(dead_code)]".to_string());
         code_writer.add_line("pub fn to_yass_value(&self) -> yass::Value {".to_string());
         code_writer.with_indent(|code_writer| {
-            code_writer.add_line("let atom = match *self {".to_string());
-            code_writer.with_indent(|code_writer| {
-                for value in enum_def.values {
-                    code_writer.add_line(format!("{}::{} => {:?},", enum_def.code_name, value.code_name, value.yass_name));
-                }
-                if let Some(unknown_value_name) = enum_def.unknown_value_name {
-                    code_writer.add_line(format!("{}::{}(ref value) => value.as_str(),", enum_def.code_name, unknown_value_name));
-                }
-            });
-            code_writer.add_line("};".to_string());
-            code_writer.add_line("yass::Value::Atom(atom.to_string())".to_string());
+            if enum_def.values.len() == 0 && enum_def.unknown_value_name.is_none() {
+                code_writer.add_line("unreachable!();".to_string());
+            } else {
+                code_writer.add_line("let atom = match *self {".to_string());
+                code_writer.with_indent(|code_writer| {
+                    for value in enum_def.values {
+                        code_writer.add_line(format!("{}::{} => {:?},", enum_def.code_name, value.code_name, value.yass_name));
+                    }
+                    if let Some(unknown_value_name) = enum_def.unknown_value_name {
+                        code_writer.add_line(format!("{}::{}(ref value) => value.as_str(),", enum_def.code_name, unknown_value_name));
+                    }
+                });
+                code_writer.add_line("};".to_string());
+                code_writer.add_line("yass::Value::Atom(atom.to_string())".to_string());
+            }
         });
         code_writer.add_line("}".to_string());
+        code_writer.add_empty_line();
         
         code_writer.add_line("#[allow(dead_code)]".to_string());
         code_writer.add_line("pub fn from_yass_value(value: &yass::Value, pos_map: &yass::PosMap) -> Result<Self, yass_schema_error::Error> {".to_string());

@@ -112,6 +112,12 @@ const TEST_1_SCHEMA: sch::Schema<'static> = sch::Schema {
             ],
             unknown_value_name: Some("UnknownValue"),
         }),
+        sch::TypeDef::Enum(sch::EnumDef {
+            yass_name: "enum-without-values",
+            code_name: "EnumWithoutValues",
+            values: &[],
+            unknown_value_name: None,
+        }),
         sch::TypeDef::Struct(sch::StructDef {
             yass_name: "test-raw-atom",
             code_name: "TestRawAtom",
