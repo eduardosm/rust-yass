@@ -781,6 +781,17 @@ fn test_array_fail_invalid_item_type_2() {
     assert_eq!(gen::TestArray::from_yass_value(&data_yass, &pos_map).unwrap_err(), expected_error);
 }
 
+#[test]
+fn test_string_array() {
+    let data_sch = gen::TestStringArray { value: vec![b"test1".to_vec(), b"test2".to_vec()] };
+    let data_yass = yass_value!({"value": ["\"test1\"", "\"test2\""]});
+    let pos_map = yass::PosMap::new();
+    
+    assert_eq!(data_sch.to_yass_value(), *data_yass);
+    assert_eq!(gen::TestStringArray::from_yass_value(&data_yass, &pos_map).unwrap(), data_sch);
+}
+
+
 // tuple
 #[test]
 fn test_tuple_empty() {

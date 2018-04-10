@@ -570,7 +570,7 @@ impl<'a> CodeGen<'a> {
             schema::Type::Array(ref item_type) => {
                 let prefix = format!("{}yass::Value::Array({}.iter().map(|item| Box::new(", prefix, value);
                 let suffix = format!(")).collect()){}", suffix);
-                self.gen_to_yass_value(item_type, prefix.as_str(), suffix.as_str(), "(**item)", code_writer);
+                self.gen_to_yass_value(item_type, prefix.as_str(), suffix.as_str(), "(*item)", code_writer);
             }
             schema::Type::Tuple(ref item_types) => {
                 code_writer.add_line(format!("{}yass::Value::Array(vec![", prefix));

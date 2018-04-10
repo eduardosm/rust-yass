@@ -245,6 +245,18 @@ const TEST_1_SCHEMA: sch::Schema<'static> = sch::Schema {
             ],
         }),
         sch::TypeDef::Struct(sch::StructDef {
+            yass_name: "test-string-array",
+            code_name: "TestStringArray",
+            fields: &[
+                sch::StructFieldDef {
+                    yass_name: "value",
+                    code_name: "value",
+                    mode: sch::StructFieldMode::SingleRequired,
+                    type_: sch::Type::Array(&sch::Type::ByteString),
+                },
+            ],
+        }),
+        sch::TypeDef::Struct(sch::StructDef {
             yass_name: "test-tuple-empty",
             code_name: "TestTupleEmpty",
             fields: &[
